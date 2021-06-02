@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microting.eFormWorkflowBase", ".\Microting.eFormWorkflowBase\Microting.eFormWorkflowBase.csproj", "{7954A415-406D-441F-AAAE-E14E0BC61E06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBMigrator", ".\DBMigrator\DBMigrator.csproj", "{ED7F7BA5-C92B-406E-90AA-6D7537DCBF3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4DBB96BF-522A-4DD1-B178-A46EE6376847}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microting.eFormWorkflowBase.Unit.Tests", ".\Microting.eFormWorkflowBase.Unit.Tests\Microting.eFormWorkflowBase.Unit.Tests.csproj", "{C9D12948-B1EB-49FE-92D3-7B68506A135C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7954A415-406D-441F-AAAE-E14E0BC61E06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7954A415-406D-441F-AAAE-E14E0BC61E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7954A415-406D-441F-AAAE-E14E0BC61E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7954A415-406D-441F-AAAE-E14E0BC61E06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED7F7BA5-C92B-406E-90AA-6D7537DCBF3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED7F7BA5-C92B-406E-90AA-6D7537DCBF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED7F7BA5-C92B-406E-90AA-6D7537DCBF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED7F7BA5-C92B-406E-90AA-6D7537DCBF3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9D12948-B1EB-49FE-92D3-7B68506A135C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9D12948-B1EB-49FE-92D3-7B68506A135C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9D12948-B1EB-49FE-92D3-7B68506A135C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9D12948-B1EB-49FE-92D3-7B68506A135C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C9D12948-B1EB-49FE-92D3-7B68506A135C} = {4DBB96BF-522A-4DD1-B178-A46EE6376847}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A3E1485-05CB-4F98-81B1-151C9DB977C0}
+	EndGlobalSection
+EndGlobal
