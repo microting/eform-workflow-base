@@ -9,7 +9,7 @@ using Microting.eFormWorkflowBase.Infrastructure.Data;
 namespace Microting.eFormWorkflowBase.Migrations
 {
     [DbContext(typeof(WorkflowPnDbContext))]
-    [Migration("20210602181713_InitialCreate")]
+    [Migration("20210615143726_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -210,6 +210,194 @@ namespace Microting.eFormWorkflowBase.Migrations
                     b.ToTable("PluginPermissions");
                 });
 
+            modelBuilder.Entity("Microting.eFormWorkflowBase.Infrastructure.Data.Entities.UploadedData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("CreatedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UpdatedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Version")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WorkflowCaseId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("WorkflowState")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WorkflowCaseId");
+
+                    b.ToTable("UploadedDatas");
+                });
+
+            modelBuilder.Entity("Microting.eFormWorkflowBase.Infrastructure.Data.Entities.UploadedDataVersion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("CreatedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UpdatedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UploadedDataId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Version")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WorkflowCaseId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("WorkflowState")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UploadedDataVersions");
+                });
+
+            modelBuilder.Entity("Microting.eFormWorkflowBase.Infrastructure.Data.Entities.WorkflowCase", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("ActionPlan")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("CreatedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateOfIncedent")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("Deadline")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("IncedentPlace")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("IncedentType")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SolvedBy")
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UpdatedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Version")
+                        .HasColumnType("int");
+
+                    b.Property<string>("WorkflowState")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WorkflowCases");
+                });
+
+            modelBuilder.Entity("Microting.eFormWorkflowBase.Infrastructure.Data.Entities.WorkflowCaseVersion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("ActionPlan")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("CreatedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateOfIncedent")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("Deadline")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("IncedentPlace")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("IncedentType")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SolvedBy")
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UpdatedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Version")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WorkflowCaseId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("WorkflowState")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WorkflowCaseVersions");
+                });
+
             modelBuilder.Entity("Microting.eFormApi.BasePn.Infrastructure.Database.Entities.PluginGroupPermission", b =>
                 {
                     b.HasOne("Microting.eFormApi.BasePn.Infrastructure.Database.Entities.PluginPermission", "Permission")
@@ -219,6 +407,22 @@ namespace Microting.eFormWorkflowBase.Migrations
                         .IsRequired();
 
                     b.Navigation("Permission");
+                });
+
+            modelBuilder.Entity("Microting.eFormWorkflowBase.Infrastructure.Data.Entities.UploadedData", b =>
+                {
+                    b.HasOne("Microting.eFormWorkflowBase.Infrastructure.Data.Entities.WorkflowCase", "WorkflowCase")
+                        .WithMany("Photos")
+                        .HasForeignKey("WorkflowCaseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("WorkflowCase");
+                });
+
+            modelBuilder.Entity("Microting.eFormWorkflowBase.Infrastructure.Data.Entities.WorkflowCase", b =>
+                {
+                    b.Navigation("Photos");
                 });
 #pragma warning restore 612, 618
         }

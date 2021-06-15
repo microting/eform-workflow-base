@@ -22,6 +22,7 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data
 {
     using eFormApi.BasePn.Abstractions;
     using eFormApi.BasePn.Infrastructure.Database.Entities;
+    using Entities;
     using Microsoft.EntityFrameworkCore;
 
     public class WorkflowPnDbContext : DbContext, IPluginDbContext
@@ -33,8 +34,16 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data
         }
 
         // Tables
+        public DbSet<WorkflowCase> WorkflowCases { get; set; }
+
+        public DbSet<UploadedData> UploadedDatas { get; set; }
+
 
         // Version tables
+        public DbSet<WorkflowCaseVersion> WorkflowCaseVersions { get; set; }
+
+        public DbSet<UploadedDataVersion> UploadedDataVersions { get; set; }
+
 
         // Common tables
         public DbSet<PluginConfigurationValue> PluginConfigurationValues { get; set; }
@@ -52,6 +61,11 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<UploadedData>()
+                .HasOne(x => x.WorkflowCase)
+                .WithMany(x => x.Photos)
+                .HasForeignKey(x => x.WorkflowCaseId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
 
     }
