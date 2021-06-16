@@ -9,7 +9,7 @@ using Microting.eFormWorkflowBase.Infrastructure.Data;
 namespace Microting.eFormWorkflowBase.Migrations
 {
     [DbContext(typeof(WorkflowPnDbContext))]
-    [Migration("20210615143726_InitialCreate")]
+    [Migration("20210616183914_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -320,8 +320,8 @@ namespace Microting.eFormWorkflowBase.Migrations
                     b.Property<string>("SolvedBy")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime(6)");
@@ -374,8 +374,8 @@ namespace Microting.eFormWorkflowBase.Migrations
                     b.Property<string>("SolvedBy")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime(6)");

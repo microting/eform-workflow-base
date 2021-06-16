@@ -41,6 +41,6 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
 
         public string SolvedBy { get; set; }
 
-        public int Status { get; set; }
+        public string Status { get; set; }
     }
 }

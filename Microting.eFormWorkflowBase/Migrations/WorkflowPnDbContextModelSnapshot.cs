@@ -318,8 +318,8 @@ namespace Microting.eFormWorkflowBase.Migrations
                     b.Property<string>("SolvedBy")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime(6)");
@@ -372,8 +372,8 @@ namespace Microting.eFormWorkflowBase.Migrations
                     b.Property<string>("SolvedBy")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime(6)");

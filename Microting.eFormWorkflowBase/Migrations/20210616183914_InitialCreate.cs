@@ -149,7 +149,8 @@ namespace Microting.eFormWorkflowBase.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     SolvedBy = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Status = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     WorkflowState = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true)
@@ -183,7 +184,8 @@ namespace Microting.eFormWorkflowBase.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     SolvedBy = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Status = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     WorkflowState = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true)
