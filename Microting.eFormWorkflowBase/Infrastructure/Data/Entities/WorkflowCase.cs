@@ -41,7 +41,12 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
 
         public string Status { get; set; }
 
-        public virtual List<UploadedData> Photos { get; set; }
-            = new List<UploadedData>();
+        public bool PhotosExist { get; set; }
+
+        public int MicrotingId { get; set; }
+
+        public int CheckMicrotingUid { get; set; }
+
+        public int CheckId { get; set; }
     }
 }

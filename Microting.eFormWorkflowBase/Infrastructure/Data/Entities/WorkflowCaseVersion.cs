@@ -42,5 +42,12 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
         public string SolvedBy { get; set; }
 
         public string Status { get; set; }
+        public bool PhotosExist { get; set; }
+
+        public int MicrotingId { get; set; }
+
+        public int CheckMicrotingUid { get; set; }
+
+        public int CheckId { get; set; }
     }
 }

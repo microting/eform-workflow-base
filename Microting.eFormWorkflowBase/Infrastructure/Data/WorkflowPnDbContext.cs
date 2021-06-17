@@ -36,13 +36,9 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data
         // Tables
         public DbSet<WorkflowCase> WorkflowCases { get; set; }
 
-        public DbSet<UploadedData> UploadedDatas { get; set; }
-
 
         // Version tables
         public DbSet<WorkflowCaseVersion> WorkflowCaseVersions { get; set; }
-
-        public DbSet<UploadedDataVersion> UploadedDataVersions { get; set; }
 
 
         // Common tables
@@ -60,12 +56,6 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<UploadedData>()
-                .HasOne(x => x.WorkflowCase)
-                .WithMany(x => x.Photos)
-                .HasForeignKey(x => x.WorkflowCaseId)
-                .OnDelete(DeleteBehavior.Restrict);
         }
 
     }
