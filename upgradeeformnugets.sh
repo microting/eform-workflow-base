@@ -6,7 +6,7 @@ if (( "$GIT_STATUS" > 0 )); then
 	cd Microting.eFormWorkflowBase
   CURRENT_NUMBER_OF_COMMITS=`git log --oneline | wc -l`
 
-	PACKAGES=('Microting.eForm' 'Microting.eFormApi.BasePn' 'Microsoft.EntityFrameworkCore' 'Microsoft.EntityFrameworkCore.Design' 'Microsoft.EntityFrameworkCore.Relational' 'Microsoft.EntityFrameworkCore.Tools' 'Microsoft.Extensions.DependencyInjection.Abstractions')
+	PACKAGES=('Microting.eForm' 'Microting.eFormApi.BasePn' 'Microsoft.EntityFrameworkCore.Design')
 	PROJECT_NAME='Microting.eFormWorkflowBase.csproj'
 	REPOSITORY='eform-workflow-base'
 
