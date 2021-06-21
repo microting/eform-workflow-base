@@ -229,7 +229,7 @@ namespace Microting.eFormWorkflowBase.Migrations
                     b.Property<int>("CreatedByUserId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateOfIncedent")
+                    b.Property<DateTime>("DateOfIncident")
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime>("Deadline")
@@ -238,10 +238,10 @@ namespace Microting.eFormWorkflowBase.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("IncedentPlace")
+                    b.Property<string>("IncidentPlace")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("IncedentType")
+                    b.Property<string>("IncidentType")
                         .HasColumnType("longtext");
 
                     b.Property<int>("MicrotingId")
@@ -295,7 +295,7 @@ namespace Microting.eFormWorkflowBase.Migrations
                     b.Property<int>("CreatedByUserId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateOfIncedent")
+                    b.Property<DateTime>("DateOfIncident")
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime>("Deadline")
@@ -304,10 +304,10 @@ namespace Microting.eFormWorkflowBase.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("IncedentPlace")
+                    b.Property<string>("IncidentPlace")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("IncedentType")
+                    b.Property<string>("IncidentType")
                         .HasColumnType("longtext");
 
                     b.Property<int>("MicrotingId")

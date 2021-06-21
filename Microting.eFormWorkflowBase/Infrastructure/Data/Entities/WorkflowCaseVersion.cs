@@ -21,7 +21,6 @@ SOFTWARE.
 namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
 {
     using System;
-    using System.Collections.Generic;
 
     public class WorkflowCaseVersion : PnBase
     {
@@ -29,11 +28,11 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
 
         public string Description { get; set; }
 
-        public DateTime DateOfIncedent { get; set; }
+        public DateTime DateOfIncident { get; set; }
 
-        public string IncedentType { get; set; }
+        public string IncidentType { get; set; }
 
-        public string IncedentPlace { get; set; }
+        public string IncidentPlace { get; set; }
 
         public DateTime Deadline { get; set; }
 
