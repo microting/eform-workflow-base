@@ -18,14 +18,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-namespace Microting.eFormWorkflowBase.Infrastructure.Enum
+namespace Microting.eFormWorkflowBase.Infrastructure.Const
 {
-    public enum WorkflowCaseStatuses
+    using System.Collections.Generic;
+
+    public static class WorkflowCaseStatuses
     {
-        Ongoing = 0,
-        Closed,
-        NoStatus,
-        NotInitiated,
-        Canceled,
+        public static List<KeyValuePair<string, int>> Statuses { get; }
+            = new()
+            {
+                new("Ongoing", 0),
+                new("Closed", 1),
+                new("No status", 2),
+                new ("Not initiated", 3),
+                new ("Canceled", 4),
+            };
     }
 }

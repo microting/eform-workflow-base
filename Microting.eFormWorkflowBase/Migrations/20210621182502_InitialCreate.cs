@@ -115,10 +115,10 @@ namespace Microting.eFormWorkflowBase.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Description = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    DateOfIncedent = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    IncedentType = table.Column<string>(type: "longtext", nullable: true)
+                    DateOfIncident = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    IncidentType = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    IncedentPlace = table.Column<string>(type: "longtext", nullable: true)
+                    IncidentPlace = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Deadline = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     ActionPlan = table.Column<string>(type: "longtext", nullable: true)
@@ -154,10 +154,10 @@ namespace Microting.eFormWorkflowBase.Migrations
                     WorkflowCaseId = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    DateOfIncedent = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    IncedentType = table.Column<string>(type: "longtext", nullable: true)
+                    DateOfIncident = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    IncidentType = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    IncedentPlace = table.Column<string>(type: "longtext", nullable: true)
+                    IncidentPlace = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Deadline = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     ActionPlan = table.Column<string>(type: "longtext", nullable: true)
