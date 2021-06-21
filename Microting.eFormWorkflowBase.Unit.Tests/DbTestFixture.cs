@@ -57,7 +57,7 @@ namespace Microting.eFormWorkflowBase.Unit.Tests
         {
 
             _connectionString =
-                $@"Server=localhost;port=3306;Database={DbName};user=root;password=secretpassword$;Convert Zero Datetime=true;";
+                 $@"Server=localhost;port=3306;Database={DbName};user=root;password=secretpassword;Convert Zero Datetime=true;";
 
             GetContext(_connectionString);
 
