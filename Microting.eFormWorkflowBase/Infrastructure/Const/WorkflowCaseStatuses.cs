@@ -1,4 +1,4 @@
-﻿/*
+/*
 The MIT License (MIT)
 Copyright (c) 2007 - 2021 Microting A/S
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,35 +18,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
+namespace Microting.eFormWorkflowBase.Infrastructure.Const
 {
-    using System;
+    using System.Collections.Generic;
 
-    public class WorkflowCaseVersion : PnBase
+    public static class WorkflowCaseStatuses
     {
-        public int WorkflowCaseId { get; set; }
-
-        public string Description { get; set; }
-
-        public DateTime DateOfIncident { get; set; }
-
-        public string IncidentType { get; set; }
-
-        public string IncidentPlace { get; set; }
-
-        public DateTime Deadline { get; set; }
-
-        public string ActionPlan { get; set; }
-
-        public string SolvedBy { get; set; }
-
-        public string Status { get; set; }
-        public bool PhotosExist { get; set; }
-
-        public int MicrotingId { get; set; }
-
-        public int CheckMicrotingUid { get; set; }
-
-        public int CheckId { get; set; }
+        public static List<KeyValuePair<string, int>> Statuses { get; }
+            = new()
+            {
+                new("Ongoing", 0),
+                new("Closed", 1),
+                new("No status", 2),
+                new ("Not initiated", 3),
+                new ("Canceled", 4),
+            };
     }
 }

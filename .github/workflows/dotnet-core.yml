@@ -40,11 +40,11 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Unit Tests
-      run: dotnet test --no-restore -c Release -v n Microting.WorkflowBase.Unit.Tests/Microting.WorkflowBase.Unit.Tests.csproj
+      run: dotnet test --no-restore -c Release -v n Microting.eFormWorkflowBase.Unit.Tests/Microting.eFormWorkflowBase.Unit.Tests.csproj
     - name: Pack
-      run: dotnet pack Microting.WorkOrderBase.sln -c Release -o ./artifacts -p:PackageVersion=${{ steps.get_version.outputs.VERSION }}
+      run: dotnet pack Microting.eFormWorkflowBase.sln -c Release -o ./artifacts -p:PackageVersion=${{ steps.get_version.outputs.VERSION }}
     - name: Push generated package to GitHub registry
-      run: dotnet nuget push /home/runner/work/eform-workflow-base/eform-workflow-base/artifacts/Microting.WorkflowBase.${{ steps.get_version.outputs.VERSION }}.nupkg -k ${{secrets.NUGET_SECRET_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols true
+      run: dotnet nuget push /home/runner/work/eform-workflow-base/eform-workflow-base/artifacts/Microting.eFormWorkflowBase.${{ steps.get_version.outputs.VERSION }}.nupkg -k ${{secrets.NUGET_SECRET_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols true
     - name: Notify slack fail
       if: ${{ failure() }}
       env:

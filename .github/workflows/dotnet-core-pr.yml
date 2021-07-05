@@ -39,4 +39,4 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Unit Tests
-      run: dotnet test --no-restore -c Release -v n Microting.WorkflowBase.Tests/Microting.WorkflowBase.Tests.csproj
+      run: dotnet test --no-restore -c Release -v n Microting.eFormWorkflowBase.Unit.Tests/Microting.eFormWorkflowBase.Unit.Tests.csproj
