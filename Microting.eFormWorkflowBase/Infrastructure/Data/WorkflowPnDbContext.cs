@@ -52,6 +52,13 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data
 
         public DbSet<PluginGroupPermissionVersion> PluginGroupPermissionVersions { get; set; }
 
+        public DbSet<AssignedSite> AssignedSites { get; set; }
+
+        public DbSet<AssignedSiteVersion> AssignedSiteVersions { get; set; }
+
+        public DbSet<PicturesOfTask> PicturesOfTasks { get; set; }
+
+        public DbSet<PicturesOfTaskDone> PicturesOfTaskDone { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
