@@ -18,6 +18,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+using System.Collections.Generic;
+
 namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
 {
     using System;
@@ -30,9 +32,13 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
 
         public string IncidentType { get; set; }
 
+        public int IncidentTypeId { get; set; }
+
         public string IncidentPlace { get; set; }
 
-        public DateTime Deadline { get; set; }
+        public int IncidentPlaceId { get; set; }
+
+        public DateTime? Deadline { get; set; }
 
         public string ActionPlan { get; set; }
 
@@ -47,5 +53,9 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
         public int CheckMicrotingUid { get; set; }
 
         public int CheckId { get; set; }
+
+        public virtual List<PicturesOfTask> PicturesOfTasks { get; set; } = new List<PicturesOfTask>();
+
+        public virtual List<PicturesOfTaskDone> PicturesOfTaskDone { get; set; } = new List<PicturesOfTaskDone>();
     }
 }

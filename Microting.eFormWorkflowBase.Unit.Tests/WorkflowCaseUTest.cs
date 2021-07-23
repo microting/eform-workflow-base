@@ -59,11 +59,11 @@ namespace Microting.eFormWorkflowBase.Unit.Tests
             };
 
             await workflowCase.Create(DbContext);
-            
+
             // Act
             var workflowCases = DbContext.WorkflowCases.AsNoTracking().ToList();
             var workflowCaseVersions = DbContext.WorkflowCaseVersions.AsNoTracking().ToList();
-            
+
             // Assert
             Assert.AreEqual(1, workflowCases.Count);
             Assert.AreEqual(1, workflowCaseVersions.Count);
@@ -73,7 +73,7 @@ namespace Microting.eFormWorkflowBase.Unit.Tests
             Assert.AreEqual(workflowCase.CheckId, workflowCases[0].CheckId);
             Assert.AreEqual(workflowCase.CheckMicrotingUid, workflowCases[0].CheckMicrotingUid);
             Assert.AreEqual(workflowCase.DateOfIncident.ToString("s"), workflowCases[0].DateOfIncident.ToString("s"));
-            Assert.AreEqual(workflowCase.Deadline.ToString("s"), workflowCases[0].Deadline.ToString("s"));
+            Assert.AreEqual(workflowCase.Deadline.ToString(), workflowCases[0].Deadline.ToString());
             Assert.AreEqual(workflowCase.Description, workflowCases[0].Description);
             Assert.AreEqual(workflowCase.IncidentPlace, workflowCases[0].IncidentPlace);
             Assert.AreEqual(workflowCase.IncidentType, workflowCases[0].IncidentType);
@@ -89,14 +89,14 @@ namespace Microting.eFormWorkflowBase.Unit.Tests
             Assert.AreEqual(workflowCase.Version, workflowCases[0].Version);
             Assert.AreEqual(Constants.WorkflowStates.Created, workflowCases[0].WorkflowState);
             Assert.AreEqual(workflowCase.WorkflowState, workflowCases[0].WorkflowState);
-            
+
             // versions
             Assert.AreEqual(workflowCase.Id, workflowCaseVersions[0].WorkflowCaseId);
             Assert.AreEqual(workflowCase.ActionPlan, workflowCaseVersions[0].ActionPlan);
             Assert.AreEqual(workflowCase.CheckId, workflowCaseVersions[0].CheckId);
             Assert.AreEqual(workflowCase.CheckMicrotingUid, workflowCaseVersions[0].CheckMicrotingUid);
             Assert.AreEqual(workflowCase.DateOfIncident.ToString("s"), workflowCaseVersions[0].DateOfIncident.ToString("s"));
-            Assert.AreEqual(workflowCase.Deadline.ToString("s"), workflowCaseVersions[0].Deadline.ToString("s"));
+            Assert.AreEqual(workflowCase.Deadline.ToString(), workflowCaseVersions[0].Deadline.ToString());
             Assert.AreEqual(workflowCase.Description, workflowCaseVersions[0].Description);
             Assert.AreEqual(workflowCase.IncidentPlace, workflowCaseVersions[0].IncidentPlace);
             Assert.AreEqual(workflowCase.IncidentType, workflowCaseVersions[0].IncidentType);
@@ -168,7 +168,7 @@ namespace Microting.eFormWorkflowBase.Unit.Tests
             Assert.AreEqual(workflowCase.CheckId, workflowCases[0].CheckId);
             Assert.AreEqual(workflowCase.CheckMicrotingUid, workflowCases[0].CheckMicrotingUid);
             Assert.AreEqual(workflowCase.DateOfIncident.ToString("s"), workflowCases[0].DateOfIncident.ToString("s"));
-            Assert.AreEqual(workflowCase.Deadline.ToString("s"), workflowCases[0].Deadline.ToString("s"));
+            Assert.AreEqual(workflowCase.Deadline.ToString(), workflowCases[0].Deadline.ToString());
             Assert.AreEqual(workflowCase.Description, workflowCases[0].Description);
             Assert.AreEqual(workflowCase.IncidentPlace, workflowCases[0].IncidentPlace);
             Assert.AreEqual(workflowCase.IncidentType, workflowCases[0].IncidentType);
@@ -191,7 +191,7 @@ namespace Microting.eFormWorkflowBase.Unit.Tests
             Assert.AreEqual(workflowCaseAfterCreate.CheckId, workflowCaseVersions[0].CheckId);
             Assert.AreEqual(workflowCaseAfterCreate.CheckMicrotingUid, workflowCaseVersions[0].CheckMicrotingUid);
             Assert.AreEqual(workflowCaseAfterCreate.DateOfIncident.ToString("s"), workflowCaseVersions[0].DateOfIncident.ToString("s"));
-            Assert.AreEqual(workflowCaseAfterCreate.Deadline.ToString("s"), workflowCaseVersions[0].Deadline.ToString("s"));
+            Assert.AreEqual(workflowCaseAfterCreate.Deadline.ToString(), workflowCaseVersions[0].Deadline.ToString());
             Assert.AreEqual(workflowCaseAfterCreate.Description, workflowCaseVersions[0].Description);
             Assert.AreEqual(workflowCaseAfterCreate.IncidentPlace, workflowCaseVersions[0].IncidentPlace);
             Assert.AreEqual(workflowCaseAfterCreate.IncidentType, workflowCaseVersions[0].IncidentType);
@@ -214,7 +214,7 @@ namespace Microting.eFormWorkflowBase.Unit.Tests
             Assert.AreEqual(workflowCase.CheckId, workflowCaseVersions[1].CheckId);
             Assert.AreEqual(workflowCase.CheckMicrotingUid, workflowCaseVersions[1].CheckMicrotingUid);
             Assert.AreEqual(workflowCase.DateOfIncident.ToString("s"), workflowCaseVersions[1].DateOfIncident.ToString("s"));
-            Assert.AreEqual(workflowCase.Deadline.ToString("s"), workflowCaseVersions[1].Deadline.ToString("s"));
+            Assert.AreEqual(workflowCase.Deadline.ToString(), workflowCaseVersions[1].Deadline.ToString());
             Assert.AreEqual(workflowCase.Description, workflowCaseVersions[1].Description);
             Assert.AreEqual(workflowCase.IncidentPlace, workflowCaseVersions[1].IncidentPlace);
             Assert.AreEqual(workflowCase.IncidentType, workflowCaseVersions[1].IncidentType);
@@ -271,7 +271,7 @@ namespace Microting.eFormWorkflowBase.Unit.Tests
             Assert.AreEqual(workflowCase.CheckId, workflowCases[0].CheckId);
             Assert.AreEqual(workflowCase.CheckMicrotingUid, workflowCases[0].CheckMicrotingUid);
             Assert.AreEqual(workflowCase.DateOfIncident.ToString("s"), workflowCases[0].DateOfIncident.ToString("s"));
-            Assert.AreEqual(workflowCase.Deadline.ToString("s"), workflowCases[0].Deadline.ToString("s"));
+            Assert.AreEqual(workflowCase.Deadline.ToString(), workflowCases[0].Deadline.ToString());
             Assert.AreEqual(workflowCase.Description, workflowCases[0].Description);
             Assert.AreEqual(workflowCase.IncidentPlace, workflowCases[0].IncidentPlace);
             Assert.AreEqual(workflowCase.IncidentType, workflowCases[0].IncidentType);
@@ -294,7 +294,7 @@ namespace Microting.eFormWorkflowBase.Unit.Tests
             Assert.AreEqual(workflowCase.CheckId, workflowCaseVersions[1].CheckId);
             Assert.AreEqual(workflowCase.CheckMicrotingUid, workflowCaseVersions[1].CheckMicrotingUid);
             Assert.AreEqual(workflowCase.DateOfIncident.ToString("s"), workflowCaseVersions[1].DateOfIncident.ToString("s"));
-            Assert.AreEqual(workflowCase.Deadline.ToString("s"), workflowCaseVersions[1].Deadline.ToString("s"));
+            Assert.AreEqual(workflowCase.Deadline.ToString(), workflowCaseVersions[1].Deadline.ToString());
             Assert.AreEqual(workflowCase.Description, workflowCaseVersions[1].Description);
             Assert.AreEqual(workflowCase.IncidentPlace, workflowCaseVersions[1].IncidentPlace);
             Assert.AreEqual(workflowCase.IncidentType, workflowCaseVersions[1].IncidentType);

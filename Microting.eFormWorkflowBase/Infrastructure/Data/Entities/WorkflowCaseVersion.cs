@@ -32,15 +32,20 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
 
         public string IncidentType { get; set; }
 
+        public int IncidentTypeId { get; set; }
+
         public string IncidentPlace { get; set; }
 
-        public DateTime Deadline { get; set; }
+        public int IncidentPlaceId { get; set; }
+
+        public DateTime? Deadline { get; set; }
 
         public string ActionPlan { get; set; }
 
         public string SolvedBy { get; set; }
 
         public string Status { get; set; }
+
         public bool PhotosExist { get; set; }
 
         public int MicrotingId { get; set; }
