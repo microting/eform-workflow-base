@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microting.eFormWorkflowBase.Infrastructure.Data;
 
 namespace Microting.eFormWorkflowBase.Migrations
 {
     [DbContext(typeof(WorkflowPnDbContext))]
-    partial class WorkflowPnDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210726131246_AddingVersionsToPictures")]
+    partial class AddingVersionsToPictures
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -307,9 +309,6 @@ namespace Microting.eFormWorkflowBase.Migrations
                     b.Property<int>("UpdatedByUserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UploadedDataId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Version")
                         .HasColumnType("int");
 
@@ -352,9 +351,6 @@ namespace Microting.eFormWorkflowBase.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("UpdatedByUserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UploadedDataId")
                         .HasColumnType("int");
 
                     b.Property<int>("Version")

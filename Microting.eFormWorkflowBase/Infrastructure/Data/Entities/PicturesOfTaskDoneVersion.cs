@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+using Microting.eForm.Infrastructure.Data.Entities;
+
 namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
 {
-    public class PicturesOfTask : WorkOrderBase.Infrastructure.Data.Base.PnBase
+    public class PicturesOfTaskDoneVersion : BaseEntity
     {
         public string FileName { get; set; }
         public int WorkflowCaseId { get; set; }

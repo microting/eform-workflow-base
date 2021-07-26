@@ -28,6 +28,9 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
     {
         public string FileName { get; set; }
         public int WorkflowCaseId { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
+        public int UploadedDataId { get; set; }
         public virtual WorkflowCase WorkflowCase { get; set; }
     }
 }
