@@ -53,5 +53,7 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
         public int CheckMicrotingUid { get; set; }
 
         public int CheckId { get; set; }
+
+        public int? DeployedMicrotingUid { get; set; }
     }
 }

@@ -54,6 +54,8 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
 
         public int CheckId { get; set; }
 
+        public int? DeployedMicrotingUid { get; set; }
+
         public virtual List<PicturesOfTask> PicturesOfTasks { get; set; } = new List<PicturesOfTask>();
 
         public virtual List<PicturesOfTaskDone> PicturesOfTaskDone { get; set; } = new List<PicturesOfTaskDone>();
