@@ -58,7 +58,11 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data
 
         public DbSet<PicturesOfTask> PicturesOfTasks { get; set; }
 
+        public DbSet<PicturesOfTaskVersion> PicturesOfTasksVersions { get; set; }
+
         public DbSet<PicturesOfTaskDone> PicturesOfTaskDone { get; set; }
+
+        public DbSet<PicturesOfTaskDoneVersion> PicturesOfTaskDoneVersions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

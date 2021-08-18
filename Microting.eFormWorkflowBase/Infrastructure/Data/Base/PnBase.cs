@@ -121,9 +121,9 @@ namespace Microting.WorkOrderBase.Infrastructure.Data.Base
                             targetProp.SetValue(returnObj, propValue, null);
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        Console.WriteLine($"{ex.Message} - Property:{prop.Name} probably not found on Class {returnObj.GetType().Name}");
+                        // Console.WriteLine($"{ex.Message} - Property:{prop.Name} probably not found on Class {returnObj.GetType().Name}");
                     }
                 }
             }
