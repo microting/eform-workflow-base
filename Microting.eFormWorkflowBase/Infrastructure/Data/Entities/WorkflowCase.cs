@@ -30,6 +30,10 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
 
         public DateTime DateOfIncident { get; set; }
 
+        public int CreatedBySiteId { get; set; }
+
+        public string CreatedBySiteName { get; set; }
+
         public string IncidentType { get; set; }
 
         public int IncidentTypeId { get; set; }
@@ -47,6 +51,8 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Entities
         public string Status { get; set; }
 
         public bool PhotosExist { get; set; }
+
+        public int NumberOfPhotos { get; set; }
 
         public int MicrotingId { get; set; }
 
