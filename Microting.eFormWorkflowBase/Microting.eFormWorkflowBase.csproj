@@ -14,4 +14,11 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Email.html" />
+    <EmbeddedResource Include="Resources\report.docx" />
+    <EmbeddedResource Include="Resources\Templates\file.docx" />
+    <EmbeddedResource Include="Resources\Templates\page.html" />
+  </ItemGroup>
+
 </Project>
