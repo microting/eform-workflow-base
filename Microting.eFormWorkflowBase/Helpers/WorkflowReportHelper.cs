@@ -21,9 +21,9 @@ namespace Microting.eFormWorkflowBase.Helpers
         private readonly eFormCore.Core _sdkCore;
         private readonly WorkflowPnDbContext _dbContext;
 
-        public WorkflowReportHelper(eFormCore.Core sdkCore, DbContextHelper dbContextHelper)
+        public WorkflowReportHelper(eFormCore.Core sdkCore, WorkflowPnDbContext dbContext)
         {
-            _dbContext = dbContextHelper.GetDbContext();
+            _dbContext = dbContext;
             _sdkCore = sdkCore;
         }
 
