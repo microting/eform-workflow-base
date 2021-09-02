@@ -111,7 +111,7 @@ namespace Microting.eFormWorkflowBase.Helpers
                 list.Add(fileContent);
                 list.Add(geoTag);
 
-                pictures.Add(new KeyValuePair<string, List<string>>("Billeder behandlet hændelse", list));
+                pictures.Add(new KeyValuePair<string, List<string>>("Billeder af løst opgave", list));
             }
 
             var stream = assembly.GetManifestResourceStream($"{assemblyName}.Resources.report.docx");
