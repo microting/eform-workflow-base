@@ -27,7 +27,7 @@ namespace Microting.eFormWorkflowBase.Helpers
             _sdkCore = sdkCore;
         }
 
-        public async Task<string> GenerateReportAnd(int languageId, WorkflowCase workflowCase)
+        public async Task<string> GenerateReportAnd(int languageId, WorkflowCase workflowCase, string fileType)
         {
             await using MicrotingDbContext sdkDbConetxt = _sdkCore.DbContextHelper.GetDbContext();
             var assembly = Assembly.GetExecutingAssembly();
@@ -133,11 +133,20 @@ namespace Microting.eFormWorkflowBase.Helpers
             ReportHelper.InsertImages(resultDocument, pictures);
             string outputFolder = Path.Combine(Path.GetTempPath(), "results");
 
-            ReportHelper.ConvertToPdf(resultDocument, outputFolder);
+            if (fileType == "pdf")
+            {
+                ReportHelper.ConvertToPdf(resultDocument, outputFolder);
 
-            string filePath = Path.Combine(Path.GetTempPath(), "results",
-                $"{timeStamp}_{workflowCase.Id}.pdf");
-            return filePath;
+                string filePath = Path.Combine(Path.GetTempPath(), "results",
+                    $"{timeStamp}_{workflowCase.Id}.pdf");
+                return filePath;
+            }
+            else
+            {
+                string filePath = Path.Combine(Path.GetTempPath(), "results",
+                    $"{timeStamp}_{workflowCase.Id}.docx");
+                return filePath;
+            }
         }
 
         private string GetStatusTranslated(string constant)
