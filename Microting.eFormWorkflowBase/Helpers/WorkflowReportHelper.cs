@@ -41,9 +41,9 @@ namespace Microting.eFormWorkflowBase.Helpers
                 {"{created_date}", workflowCase.CreatedAt.ToString("dd-MM-yyyy")},
                 {"{incident_type}", workflowCase.IncidentType},
                 {"{incident_location}", workflowCase.IncidentPlace},
-                {"{incident_description}", workflowCase.Description.Replace("&", "&amp;")},
+                {"{incident_description}", workflowCase.Description.Replace("<","&lt;").Replace(">","&gt;")},
                 {"{incident_deadline}", workflowCase.Deadline?.ToString("dd-MM-yyyy")},
-                {"{incident_action_plan}", workflowCase.ActionPlan?.Replace("&", "&amp;")},
+                {"{incident_action_plan}", workflowCase.ActionPlan?.Replace("<","&lt;").Replace(">","&gt;")},
                 {"{incident_solved_by}", workflowCase.SolvedBy},
                 {"{incident_status}", GetStatusTranslated(workflowCase.Status)}
             };
