@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Amazon.S3.Model;
 using ImageMagick;
@@ -35,15 +36,18 @@ namespace Microting.eFormWorkflowBase.Helpers
 
             List<KeyValuePair<string, List<string>>> pictures = new List<KeyValuePair<string, List<string>>>();
 
+            string description = FixLineBreaksAndTabsForWord(workflowCase.Description);
+            string actionPlan = FixLineBreaksAndTabsForWord(workflowCase.ActionPlan);
+
             SortedDictionary<string, string> valuePairs = new SortedDictionary<string, string>
             {
                 {"{created_by}", workflowCase.CreatedBySiteName},
                 {"{created_date}", workflowCase.CreatedAt.ToString("dd-MM-yyyy")},
                 {"{incident_type}", workflowCase.IncidentType},
                 {"{incident_location}", workflowCase.IncidentPlace},
-                {"{incident_description}", workflowCase.Description.Replace("<","&lt;").Replace(">","&gt;")},
+                {"{incident_description}", description},
                 {"{incident_deadline}", workflowCase.Deadline?.ToString("dd-MM-yyyy")},
-                {"{incident_action_plan}", workflowCase.ActionPlan?.Replace("<","&lt;").Replace(">","&gt;")},
+                {"{incident_action_plan}", actionPlan},
                 {"{incident_solved_by}", workflowCase.SolvedBy},
                 {"{incident_status}", GetStatusTranslated(workflowCase.Status)}
             };
@@ -166,6 +170,18 @@ namespace Microting.eFormWorkflowBase.Helpers
                 default:
                     return "Ikke igangsat";
             }
+        }
+
+        private string FixLineBreaksAndTabsForWord(string input)
+        {
+            input = input.Replace("<", "&lt;").Replace(">", "&gt;");
+            input = input.Replace("<br>", "|||");
+            input = Regex.Replace(input, "<.*?>",
+                string.Empty);
+            input = input.Replace("\t", @"</w:t><w:tab/><w:t>");
+            input =
+                input.Replace("|||", @"</w:t><w:br/><w:t>");
+            return input;
         }
     }
 }
