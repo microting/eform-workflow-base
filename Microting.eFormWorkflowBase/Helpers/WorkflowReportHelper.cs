@@ -174,13 +174,19 @@ namespace Microting.eFormWorkflowBase.Helpers
 
         private string FixLineBreaksAndTabsForWord(string input)
         {
-            input = input.Replace("<", "&lt;").Replace(">", "&gt;");
+            if (string.IsNullOrEmpty(input))
+            {
+                return "";
+            }
+            // input = input.Replace("<", "&lt;").Replace(">", "&gt;");
             input = input.Replace("<br>", "|||");
             input = Regex.Replace(input, "<.*?>",
                 string.Empty);
             input = input.Replace("\t", @"</w:t><w:tab/><w:t>");
             input =
                 input.Replace("|||", @"</w:t><w:br/><w:t>");
+            input =
+                input.Replace("\n", @"</w:t><w:br/><w:t>");
             return input;
         }
     }
