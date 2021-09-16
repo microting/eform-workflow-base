@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +20,12 @@
     <EmbeddedResource Include="Resources\report.docx" />
     <EmbeddedResource Include="Resources\Templates\file.docx" />
     <EmbeddedResource Include="Resources\Templates\page.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icon.png">
+      <Pack>true</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
