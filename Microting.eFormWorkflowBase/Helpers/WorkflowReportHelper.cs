@@ -42,7 +42,7 @@ namespace Microting.eFormWorkflowBase.Helpers
             SortedDictionary<string, string> valuePairs = new SortedDictionary<string, string>
             {
                 {"{created_by}", workflowCase.CreatedBySiteName},
-                {"{created_date}", workflowCase.CreatedAt.ToString("dd-MM-yyyy")},
+                {"{created_date}", workflowCase.DateOfIncident.ToString("dd-MM-yyyy")},
                 {"{incident_type}", workflowCase.IncidentType},
                 {"{incident_location}", workflowCase.IncidentPlace},
                 {"{incident_description}", description},
