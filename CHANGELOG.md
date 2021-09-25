@@ -1,5 +1,26 @@
 # Changelog
 
+## [v1.0.45](https://github.com/microting/eform-workflow-base/tree/v1.0.45) (2021-09-25)
+
+[Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.0.44...v1.0.45)
+
+**Implemented enhancements:**
+
+- Bump Microting.eFormApi.BasePn from 3.0.50 to 3.0.51 [\#65](https://github.com/microting/eform-workflow-base/issues/65)
+- Bump Microting.eForm from 5.2.40 to 5.2.42 [\#64](https://github.com/microting/eform-workflow-base/issues/64)
+
+## [v1.0.44](https://github.com/microting/eform-workflow-base/tree/v1.0.44) (2021-09-21)
+
+[Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.0.43...v1.0.44)
+
+## [v1.0.43](https://github.com/microting/eform-workflow-base/tree/v1.0.43) (2021-09-16)
+
+[Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.0.42...v1.0.43)
+
+## [v1.0.42](https://github.com/microting/eform-workflow-base/tree/v1.0.42) (2021-09-16)
+
+[Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.0.41...v1.0.42)
+
 ## [v1.0.41](https://github.com/microting/eform-workflow-base/tree/v1.0.41) (2021-09-15)
 
 [Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.0.40...v1.0.41)
@@ -165,11 +186,6 @@
 
 [Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.0.17...v1.0.18)
 
-**Implemented enhancements:**
-
-- Bump Microting.eFormApi.BasePn from 3.0.33 to 3.0.34 [\#36](https://github.com/microting/eform-workflow-base/issues/36)
-- Bump Microsoft.EntityFrameworkCore.Design from 5.0.7 to 5.0.8 [\#30](https://github.com/microting/eform-workflow-base/issues/30)
-
 ## [v1.0.17](https://github.com/microting/eform-workflow-base/tree/v1.0.17) (2021-08-01)
 
 [Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.0.16...v1.0.17)
@@ -204,8 +220,8 @@
 
 **Implemented enhancements:**
 
+- Bump Microting.eFormApi.BasePn from 3.0.33 to 3.0.34 [\#36](https://github.com/microting/eform-workflow-base/issues/36)
 - Bump Microting.eFormApi.BasePn from 3.0.30 to 3.0.31 [\#32](https://github.com/microting/eform-workflow-base/issues/32)
-- Bump Microting.eForm from 5.2.17 to 5.2.18 [\#31](https://github.com/microting/eform-workflow-base/issues/31)
 
 ## [v1.0.10](https://github.com/microting/eform-workflow-base/tree/v1.0.10) (2021-07-19)
 
@@ -217,6 +233,8 @@
 
 **Implemented enhancements:**
 
+- Bump Microting.eForm from 5.2.17 to 5.2.18 [\#31](https://github.com/microting/eform-workflow-base/issues/31)
+- Bump Microsoft.EntityFrameworkCore.Design from 5.0.7 to 5.0.8 [\#30](https://github.com/microting/eform-workflow-base/issues/30)
 - Bump Microting.eFormApi.BasePn from 3.0.28 to 3.0.30 [\#29](https://github.com/microting/eform-workflow-base/issues/29)
 - Bump Microting.eForm from 5.2.15 to 5.2.17 [\#28](https://github.com/microting/eform-workflow-base/issues/28)
 
@@ -243,7 +261,6 @@
 - Bump Pomelo.EntityFrameworkCore.MySql from 5.0.0 to 5.0.1 [\#20](https://github.com/microting/eform-workflow-base/pull/20) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.NET.Test.Sdk from 16.9.1 to 16.10.0 [\#5](https://github.com/microting/eform-workflow-base/pull/5) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump NUnit3TestAdapter from 3.17.0 to 4.0.0 [\#4](https://github.com/microting/eform-workflow-base/pull/4) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump NUnit from 3.13.1 to 3.13.2 [\#2](https://github.com/microting/eform-workflow-base/pull/2) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v1.0.6](https://github.com/microting/eform-workflow-base/tree/v1.0.6) (2021-07-05)
 
@@ -287,6 +304,7 @@
 **Merged pull requests:**
 
 - Fix typo in class prop. change workflow statuses [\#12](https://github.com/microting/eform-workflow-base/pull/12) ([sanioooook](https://github.com/sanioooook))
+- Bump NUnit from 3.13.1 to 3.13.2 [\#2](https://github.com/microting/eform-workflow-base/pull/2) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v1.0.1](https://github.com/microting/eform-workflow-base/tree/v1.0.1) (2021-06-21)
 
