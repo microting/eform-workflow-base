@@ -1,5 +1,30 @@
 # Changelog
 
+## [v1.1.11](https://github.com/microting/eform-workflow-base/tree/v1.1.11) (2021-12-16)
+
+[Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.1.10...v1.1.11)
+
+**Implemented enhancements:**
+
+- Bump Microting.eFormApi.BasePn from 3.1.10 to 3.1.11 [\#96](https://github.com/microting/eform-workflow-base/issues/96)
+- Bump Microting.eForm from 5.3.15 to 5.3.16 [\#95](https://github.com/microting/eform-workflow-base/issues/95)
+
+## [v1.1.10](https://github.com/microting/eform-workflow-base/tree/v1.1.10) (2021-12-16)
+
+[Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.1.9...v1.1.10)
+
+## [v1.1.9](https://github.com/microting/eform-workflow-base/tree/v1.1.9) (2021-12-15)
+
+[Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.1.8...v1.1.9)
+
+## [v1.1.8](https://github.com/microting/eform-workflow-base/tree/v1.1.8) (2021-12-14)
+
+[Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.1.7...v1.1.8)
+
+## [v1.1.7](https://github.com/microting/eform-workflow-base/tree/v1.1.7) (2021-12-06)
+
+[Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.1.6...v1.1.7)
+
 ## [v1.1.6](https://github.com/microting/eform-workflow-base/tree/v1.1.6) (2021-11-24)
 
 [Full Changelog](https://github.com/microting/eform-workflow-base/compare/v1.1.5...v1.1.6)
@@ -50,6 +75,7 @@
 
 **Merged pull requests:**
 
+- Bump NUnit3TestAdapter from 4.0.0 to 4.1.0 [\#80](https://github.com/microting/eform-workflow-base/pull/80) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.NET.Test.Sdk from 16.11.0 to 17.0.0 [\#75](https://github.com/microting/eform-workflow-base/pull/75) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v1.1.0](https://github.com/microting/eform-workflow-base/tree/v1.1.0) (2021-11-16)
@@ -146,6 +172,7 @@
 
 - Bump Microting.eFormApi.BasePn from 3.0.54 to 3.0.55 [\#68](https://github.com/microting/eform-workflow-base/issues/68)
 - Bump Microting.eForm from 5.2.45 to 5.2.46 [\#67](https://github.com/microting/eform-workflow-base/issues/67)
+- Bump Microting.eForm from 5.2.37 to 5.2.39 [\#61](https://github.com/microting/eform-workflow-base/issues/61)
 
 ## [v1.0.48](https://github.com/microting/eform-workflow-base/tree/v1.0.48) (2021-10-01)
 
@@ -188,7 +215,6 @@
 
 - Bump Microsoft.EntityFrameworkCore.Design from 5.0.9 to 5.0.10 [\#63](https://github.com/microting/eform-workflow-base/issues/63)
 - Bump Microting.eFormApi.BasePn from 3.0.47 to 3.0.49 [\#62](https://github.com/microting/eform-workflow-base/issues/62)
-- Bump Microting.eForm from 5.2.37 to 5.2.39 [\#61](https://github.com/microting/eform-workflow-base/issues/61)
 
 ## [v1.0.40](https://github.com/microting/eform-workflow-base/tree/v1.0.40) (2021-09-14)
 
@@ -198,6 +224,7 @@
 
 - Bump Microting.eFormApi.BasePn from 3.0.46 to 3.0.47 [\#59](https://github.com/microting/eform-workflow-base/issues/59)
 - Bump Microting.eForm from 5.2.36 to 5.2.37 [\#58](https://github.com/microting/eform-workflow-base/issues/58)
+- Bump Microting.eForm from 5.2.33 to 5.2.35 [\#54](https://github.com/microting/eform-workflow-base/issues/54)
 
 ## [v1.0.39](https://github.com/microting/eform-workflow-base/tree/v1.0.39) (2021-09-14)
 
@@ -206,6 +233,7 @@
 **Implemented enhancements:**
 
 - Bump Microting.eFormApi.BasePn from 3.0.45 to 3.0.46 [\#57](https://github.com/microting/eform-workflow-base/issues/57)
+- Bump Microting.eForm from 5.2.35 to 5.2.36 [\#56](https://github.com/microting/eform-workflow-base/issues/56)
 
 ## [v1.0.38](https://github.com/microting/eform-workflow-base/tree/v1.0.38) (2021-09-09)
 
@@ -234,7 +262,6 @@
 **Implemented enhancements:**
 
 - Bump Microting.eFormApi.BasePn from 3.0.44 to 3.0.45 [\#55](https://github.com/microting/eform-workflow-base/issues/55)
-- Bump Microting.eForm from 5.2.33 to 5.2.35 [\#54](https://github.com/microting/eform-workflow-base/issues/54)
 
 ## [v1.0.33](https://github.com/microting/eform-workflow-base/tree/v1.0.33) (2021-09-03)
 
@@ -282,7 +309,6 @@
 
 **Implemented enhancements:**
 
-- Bump Microting.eForm from 5.2.35 to 5.2.36 [\#56](https://github.com/microting/eform-workflow-base/issues/56)
 - Bump Microting.eFormApi.BasePn from 3.0.42 to 3.0.43 [\#52](https://github.com/microting/eform-workflow-base/issues/52)
 - Bump Microting.eForm from 5.2.32 to 5.2.33 [\#51](https://github.com/microting/eform-workflow-base/issues/51)
 
@@ -432,7 +458,6 @@
 **Implemented enhancements:**
 
 - Bump Microting.eFormApi.BasePn from 3.0.25 to 3.0.26 [\#22](https://github.com/microting/eform-workflow-base/issues/22)
-- Bump Microting.eFormApi.BasePn from 3.0.22 to 3.0.23 [\#15](https://github.com/microting/eform-workflow-base/issues/15)
 
 ## [v1.0.5](https://github.com/microting/eform-workflow-base/tree/v1.0.5) (2021-06-27)
 
@@ -458,6 +483,7 @@
 **Implemented enhancements:**
 
 - Bump Microsoft.EntityFrameworkCore.Design from 5.0.5 to 5.0.7 [\#16](https://github.com/microting/eform-workflow-base/issues/16)
+- Bump Microting.eFormApi.BasePn from 3.0.22 to 3.0.23 [\#15](https://github.com/microting/eform-workflow-base/issues/15)
 - Bump Microting.eForm from 5.2.11 to 5.2.12 [\#14](https://github.com/microting/eform-workflow-base/issues/14)
 
 ## [v1.0.2](https://github.com/microting/eform-workflow-base/tree/v1.0.2) (2021-06-21)
