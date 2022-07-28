@@ -29,11 +29,11 @@ namespace Microting.eFormWorkflowBase.Infrastructure.Data.Factories
     {
         public WorkflowPnDbContext CreateDbContext(string[] args)
         {
-            const string defaultConnectionString = "Server=localhost;port=3306;Database=workflow-pn;user=root;password=secretpassword;Convert Zero Datetime=true;";
+            const string defaultCs = "Server=localhost;port=3306;Database=workflow-pn;user=root;password=secretpassword;Convert Zero Datetime=true;";
             var optionsBuilder = new DbContextOptionsBuilder<WorkflowPnDbContext>();
 
-            optionsBuilder.UseMySql(args.Any() ? args[0] : defaultConnectionString, new MariaDbServerVersion(
-                new Version(10, 4, 0)), mySqlOptionsAction: builder =>
+            optionsBuilder.UseMySql(args.Any() ? args[0] : defaultCs, new MariaDbServerVersion(
+                ServerVersion.AutoDetect(args.Any() ? args[0] : defaultCs)), mySqlOptionsAction: builder =>
             {
                 builder.EnableRetryOnFailure();
             });
