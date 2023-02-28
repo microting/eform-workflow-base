@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Amazon.S3.Model;
+using DocumentFormat.OpenXml.Packaging;
 using ImageMagick;
 using Microsoft.EntityFrameworkCore;
 using Microting.eForm.Helpers;
@@ -131,11 +132,16 @@ namespace Microting.eFormWorkflowBase.Helpers
             {
                 if (stream != null) await stream.CopyToAsync(fileStream);
             }
+            WordprocessingDocument wordDoc = WordprocessingDocument.Open(resultDocument, true);
 
-            ReportHelper.SearchAndReplace(valuePairs, resultDocument);
+            ReportHelper.SearchAndReplace(valuePairs, wordDoc);
 
-            ReportHelper.InsertImages(resultDocument, pictures);
+            ReportHelper.InsertImages(wordDoc, pictures);
             string outputFolder = Path.Combine(Path.GetTempPath(), "results");
+
+            wordDoc.Save();
+            wordDoc.Close();
+            wordDoc.Dispose();
 
             if (fileType == "pdf")
             {
