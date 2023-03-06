@@ -82,6 +82,7 @@ namespace Microting.eFormWorkflowBase.Helpers
 
                 list.Add(fileContent);
                 list.Add(geoTag);
+                list.Add("NoValue");
 
                 pictures.Add(new KeyValuePair<string, List<string>>("Billeder af hændelsen", list));
             }
@@ -115,6 +116,7 @@ namespace Microting.eFormWorkflowBase.Helpers
 
                 list.Add(fileContent);
                 list.Add(geoTag);
+                list.Add("NoValue");
 
                 pictures.Add(new KeyValuePair<string, List<string>>("Billeder af løst opgave", list));
             }
