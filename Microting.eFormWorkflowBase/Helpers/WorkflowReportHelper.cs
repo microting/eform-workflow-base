@@ -142,7 +142,6 @@ namespace Microting.eFormWorkflowBase.Helpers
             string outputFolder = Path.Combine(Path.GetTempPath(), "results");
 
             wordDoc.Save();
-            wordDoc.Close();
             wordDoc.Dispose();
 
             if (fileType == "pdf")
