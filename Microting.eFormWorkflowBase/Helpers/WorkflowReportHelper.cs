@@ -55,17 +55,30 @@ namespace Microting.eFormWorkflowBase.Helpers
 
             foreach (PicturesOfTask picturesOfTask in await _dbContext.PicturesOfTasks.Where(x => x.WorkflowCaseId == workflowCase.Id).ToListAsync())
             {
-                UploadedData uploadedData =
-                    await sdkDbConetxt.UploadedDatas.SingleOrDefaultAsync(x => x.Id == picturesOfTask.UploadedDataId);
+                var fileName = picturesOfTask.FileName;
+                if (fileName.Length < 25)
+                {
+                    var ud = await sdkDbConetxt.UploadedDatas.AsNoTracking().SingleAsync(x => x.Id == picturesOfTask.UploadedDataId);
+
+                    if (ud.FileLocation.Contains("https"))
+                    {
+                        await _sdkCore.DownloadUploadedData(ud.Id);
+                        ud = await sdkDbConetxt.UploadedDatas.AsNoTracking().SingleAsync(x => x.Id == picturesOfTask.UploadedDataId);
+                    }
+
+                    fileName = $"{picturesOfTask.UploadedDataId}_700_{ud.Checksum}{ud.Extension}";
+                    picturesOfTask.FileName = fileName;
+                    await picturesOfTask.Update(_dbContext);
+                }
 
                 FieldValue fieldValue =
-                    await sdkDbConetxt.FieldValues.SingleOrDefaultAsync(x =>
+                    await sdkDbConetxt.FieldValues.FirstOrDefaultAsync(x =>
                         x.UploadedDataId == picturesOfTask.UploadedDataId);
 
                 var list = new List<string>();
 
-                string fileName =
-                    $"{uploadedData.Id}_700_{uploadedData.Checksum}{uploadedData.Extension}";
+                // string fileName =
+                //     $"{uploadedData.Id}_700_{uploadedData.Checksum}{uploadedData.Extension}";
 
                 string fileContent = "";
                 using GetObjectResponse response =
