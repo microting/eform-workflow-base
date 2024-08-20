@@ -55,83 +55,100 @@ namespace Microting.eFormWorkflowBase.Helpers
 
             foreach (PicturesOfTask picturesOfTask in await _dbContext.PicturesOfTasks.Where(x => x.WorkflowCaseId == workflowCase.Id).ToListAsync())
             {
-                var fileName = picturesOfTask.FileName;
-                if (fileName.Length < 25)
+                try
                 {
-                    var ud = await sdkDbConetxt.UploadedDatas.AsNoTracking().SingleAsync(x => x.Id == picturesOfTask.UploadedDataId);
-
-                    if (ud.FileLocation.Contains("https"))
+                    var fileName = picturesOfTask.FileName;
+                    if (fileName.Length < 25)
                     {
-                        await _sdkCore.DownloadUploadedData(ud.Id);
-                        ud = await sdkDbConetxt.UploadedDatas.AsNoTracking().SingleAsync(x => x.Id == picturesOfTask.UploadedDataId);
+                        var ud = await sdkDbConetxt.UploadedDatas.AsNoTracking()
+                            .SingleAsync(x => x.Id == picturesOfTask.UploadedDataId);
+
+                        if (ud.FileLocation.Contains("https"))
+                        {
+                            await _sdkCore.DownloadUploadedData(ud.Id);
+                            ud = await sdkDbConetxt.UploadedDatas.AsNoTracking()
+                                .SingleAsync(x => x.Id == picturesOfTask.UploadedDataId);
+                        }
+
+                        fileName = $"{picturesOfTask.UploadedDataId}_700_{ud.Checksum}{ud.Extension}";
+                        picturesOfTask.FileName = fileName;
+                        await picturesOfTask.Update(_dbContext);
                     }
 
-                    fileName = $"{picturesOfTask.UploadedDataId}_700_{ud.Checksum}{ud.Extension}";
-                    picturesOfTask.FileName = fileName;
-                    await picturesOfTask.Update(_dbContext);
+                    FieldValue fieldValue =
+                        await sdkDbConetxt.FieldValues.FirstOrDefaultAsync(x =>
+                            x.UploadedDataId == picturesOfTask.UploadedDataId);
+
+                    var list = new List<string>();
+
+                    // string fileName =
+                    //     $"{uploadedData.Id}_700_{uploadedData.Checksum}{uploadedData.Extension}";
+
+                    string fileContent = "";
+                    using GetObjectResponse response =
+                        await _sdkCore.GetFileFromS3Storage(fileName);
+                    using var image = new MagickImage(response.ResponseStream);
+                    fileContent = image.ToBase64();
+
+                    string geoTag = "";
+                    if (fieldValue.Latitude != null)
+                    {
+                        geoTag =
+                            $"https://www.google.com/maps/place/{fieldValue.Latitude},{fieldValue.Longitude}";
+                    }
+
+                    list.Add(fileContent);
+                    list.Add(geoTag);
+                    list.Add("NoValue");
+
+                    pictures.Add(new KeyValuePair<string, List<string>>("Billeder af hændelsen", list));
                 }
-
-                FieldValue fieldValue =
-                    await sdkDbConetxt.FieldValues.FirstOrDefaultAsync(x =>
-                        x.UploadedDataId == picturesOfTask.UploadedDataId);
-
-                var list = new List<string>();
-
-                // string fileName =
-                //     $"{uploadedData.Id}_700_{uploadedData.Checksum}{uploadedData.Extension}";
-
-                string fileContent = "";
-                using GetObjectResponse response =
-                    await _sdkCore.GetFileFromS3Storage(fileName);
-                using var image = new MagickImage(response.ResponseStream);
-                fileContent = image.ToBase64();
-
-                string geoTag = "";
-                if (fieldValue.Latitude != null)
+                catch (Exception ex)
                 {
-                    geoTag =
-                        $"https://www.google.com/maps/place/{fieldValue.Latitude},{fieldValue.Longitude}";
+                    Console.WriteLine(ex.Message);
                 }
-
-                list.Add(fileContent);
-                list.Add(geoTag);
-                list.Add("NoValue");
-
-                pictures.Add(new KeyValuePair<string, List<string>>("Billeder af hændelsen", list));
             }
 
             foreach (PicturesOfTaskDone picturesOfTask in await _dbContext.PicturesOfTaskDone.Where(x => x.WorkflowCaseId == workflowCase.Id).ToListAsync())
             {
-                UploadedData uploadedData =
-                    await sdkDbConetxt.UploadedDatas.SingleOrDefaultAsync(x => x.Id == picturesOfTask.UploadedDataId);
-
-                FieldValue fieldValue =
-                    await sdkDbConetxt.FieldValues.SingleOrDefaultAsync(x =>
-                        x.UploadedDataId == picturesOfTask.UploadedDataId);
-
-                var list = new List<string>();
-
-                string fileName =
-                    $"{uploadedData.Id}_700_{uploadedData.Checksum}{uploadedData.Extension}";
-
-                string fileContent = "";
-                using GetObjectResponse response =
-                    await _sdkCore.GetFileFromS3Storage(fileName);
-                using var image = new MagickImage(response.ResponseStream);
-                fileContent = image.ToBase64();
-
-                string geoTag = "";
-                if (fieldValue.Latitude != null)
+                try
                 {
-                    geoTag =
-                        $"https://www.google.com/maps/place/{fieldValue.Latitude},{fieldValue.Longitude}";
+                    UploadedData uploadedData =
+                        await sdkDbConetxt.UploadedDatas.SingleOrDefaultAsync(
+                            x => x.Id == picturesOfTask.UploadedDataId);
+
+                    FieldValue fieldValue =
+                        await sdkDbConetxt.FieldValues.SingleOrDefaultAsync(x =>
+                            x.UploadedDataId == picturesOfTask.UploadedDataId);
+
+                    var list = new List<string>();
+
+                    string fileName =
+                        $"{uploadedData.Id}_700_{uploadedData.Checksum}{uploadedData.Extension}";
+
+                    string fileContent = "";
+                    using GetObjectResponse response =
+                        await _sdkCore.GetFileFromS3Storage(fileName);
+                    using var image = new MagickImage(response.ResponseStream);
+                    fileContent = image.ToBase64();
+
+                    string geoTag = "";
+                    if (fieldValue.Latitude != null)
+                    {
+                        geoTag =
+                            $"https://www.google.com/maps/place/{fieldValue.Latitude},{fieldValue.Longitude}";
+                    }
+
+                    list.Add(fileContent);
+                    list.Add(geoTag);
+                    list.Add("NoValue");
+
+                    pictures.Add(new KeyValuePair<string, List<string>>("Billeder af løst opgave", list));
                 }
-
-                list.Add(fileContent);
-                list.Add(geoTag);
-                list.Add("NoValue");
-
-                pictures.Add(new KeyValuePair<string, List<string>>("Billeder af løst opgave", list));
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
 
             var stream = assembly.GetManifestResourceStream($"{assemblyName}.Resources.report.docx");
