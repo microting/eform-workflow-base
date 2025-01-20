@@ -27,7 +27,7 @@ namespace Microting.eFormWorkflowBase.Unit.Tests
     {
         public void CanPeep()
         {
-            Assert.True(true);
+            Assert.That(true);
         }
     }
 }
